@@ -6,8 +6,9 @@ An adaptive Fuzzy Logic controller in Python with a PyQt6 GUI for real-time proc
 An intelligent, self-tuning process controller designed to handle real-world disturbances using Fuzzy Logic. This application provides a user-friendly graphical interface to configure, monitor, and adapt to industrial processes controlled by Siemens PLCs.
 
 This project is the evolution of a previous MATLAB/OPC-based application, rebuilt in Python for greater flexibility, performance, and ease of deployment.
+<img width="1020" height="1032" alt="vlcsnap-2025-11-17-09h03m10s643" src="https://github.com/user-attachments/assets/77351231-0ccb-4ca5-a36b-caa9f8f22f5c" />
 
-![Demo GIF/Screenshot](https://place-hold.it/800x450?text=Your-App-Screenshot-or-GIF-Here)
+
 *(Replace the placeholder above with a GIF or screenshot of your application in action!)*
 
 ## Key Features
@@ -48,8 +49,8 @@ Unlike a standard PID or a static fuzzy controller, this application shines when
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/Erenuzun83/FuzzyLogic.git
+    cd FuzzyLogic
     ```
 2.  Install the required packages:
     ```bash
@@ -74,3 +75,37 @@ Unlike a standard PID or a static fuzzy controller, this application shines when
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+🚀 **Future Development & To-Do List**
+
+This project is in active development. The goal is to evolve this controller into a more generic, powerful, and robust tool for various industrial automation challenges. Here is the planned roadmap:
+
+**Phase 1: Generalization of Process Control (v2.0)**
+
+Abstract Process Variables: Refactor the core logic to move beyond "level control." Introduce generic terms like "Process Variable (PV)" and "Setpoint (SP)" to make the controller adaptable for temperature, pressure, flow, etc.
+
+Dynamic UI Configuration: Allow users to rename labels ("Tank Level", "Temperature") directly from the GUI, making the application instantly adaptable to different processes.
+
+Scalable I/O Handling: Implement a more flexible system for defining inputs and outputs.
+
+Allow users to add/remove more than two control elements (valves, heaters, pumps) dynamically.
+
+Create a dedicated configuration panel to map each process element to its corresponding PLC address.
+**Phase 2: Enhancement of Adaptive Logic (v2.1)**
+
+Correction Logic Improvement: The AGGRESSIVE_CORRECTION phase is effective but can sometimes be too powerful. Research and implement alternative strategies:
+
+Ramped Correction: Instead of a single, large step change, apply the correction over a short period (ramping) to reduce system shock.
+
+Predictive Correction: Use the rate of change (delta) of the error during the OBSERVE phase to predict the required correction magnitude more accurately, instead of using a fixed multiplier.
+
+Overshoot Suppression: Develop a smarter mechanism to prevent overshoot after AGGRESSIVE_CORRECTION. This could involve dynamically adjusting the proactive_reduction value based on the system's response speed.
+**Phase 3: Usability and Deployment (v2.2)**
+
+Configuration Profiles: Allow users to save and load different complete configurations (PLC settings, fuzzy rules, adaptation parameters) as named profiles.
+
+Packaged Executable: Create a standalone executable file (using PyInstaller or similar tools) so that users can run the application without needing to install Python or any libraries.
+
+Enhanced Plotting: Add a real-time trend chart to visualize the Process Variable (PV), Setpoint (SP), and valve outputs over time.
+
+
