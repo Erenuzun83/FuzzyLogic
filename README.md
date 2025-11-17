@@ -91,6 +91,7 @@ Scalable I/O Handling: Implement a more flexible system for defining inputs and 
 Allow users to add/remove more than two control elements (valves, heaters, pumps) dynamically.
 
 Create a dedicated configuration panel to map each process element to its corresponding PLC address.
+
 **Phase 2: Enhancement of Adaptive Logic (v2.1)**
 
 Correction Logic Improvement: The AGGRESSIVE_CORRECTION phase is effective but can sometimes be too powerful. Research and implement alternative strategies:
@@ -100,6 +101,7 @@ Ramped Correction: Instead of a single, large step change, apply the correction 
 Predictive Correction: Use the rate of change (delta) of the error during the OBSERVE phase to predict the required correction magnitude more accurately, instead of using a fixed multiplier.
 
 Overshoot Suppression: Develop a smarter mechanism to prevent overshoot after AGGRESSIVE_CORRECTION. This could involve dynamically adjusting the proactive_reduction value based on the system's response speed.
+
 **Phase 3: Usability and Deployment (v2.2)**
 
 Configuration Profiles: Allow users to save and load different complete configurations (PLC settings, fuzzy rules, adaptation parameters) as named profiles.
