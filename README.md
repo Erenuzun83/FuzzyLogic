@@ -9,7 +9,6 @@ This project is the evolution of a previous MATLAB/OPC-based application, rebuil
 <img width="1020" height="1032" alt="vlcsnap-2025-11-17-09h03m10s643" src="https://github.com/user-attachments/assets/77351231-0ccb-4ca5-a36b-caa9f8f22f5c" />
 
 
-*(Replace the placeholder above with a GIF or screenshot of your application in action!)*
 
 ## Key Features
 
